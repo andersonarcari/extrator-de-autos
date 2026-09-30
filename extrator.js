@@ -15,12 +15,15 @@
 (function () {
   "use strict";
 
-  var VERSAO = "0.3.1";
+  var VERSAO = "0.3.2";
   var BRASAO = "data:image/png;base64,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";
   var FILTRO_UNIDADE = "MAmb";
   var STATUS_CANCELADO = "cancel";
   var CONCORRENCIA_FASE2 = 4;
   var URL_SHEETJS = "https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js";
+  // Assinatura (SRI) do arquivo oficial do SheetJS 0.18.5. Se o arquivo do CDN for
+  // alterado, o navegador recusa carregá-lo. Só muda se trocarmos a versão da biblioteca.
+  var SRI_SHEETJS = "sha384-vtjasyidUo0kW94K5MXDXntzOJpQgBKXmE7e2Ga4LG0skTTLeBi97eFAXsqewJjw";
 
   if (location.hostname !== "ecosistemas.meioambiente.mg.gov.br") {
     alert("O Extrator de Autos só funciona dentro da aba do Ecosistemas.\n\nVá para a aba do GAIA Fiscalização (já logada) e clique no favorito com ela aberta.");
@@ -311,8 +314,8 @@
     if (window.XLSX) return Promise.resolve();
     return new Promise(function (ok, falha) {
       var s = document.createElement("script");
-      s.src = URL_SHEETJS; s.onload = ok;
-      s.onerror = function () { falha(new Error("Não foi possível carregar a biblioteca de Excel (sem internet ou bloqueada).")); };
+      s.src = URL_SHEETJS; s.integrity = SRI_SHEETJS; s.crossOrigin = "anonymous"; s.onload = ok;
+      s.onerror = function () { falha(new Error("Não foi possível carregar a biblioteca de Excel (sem internet, bloqueada ou com assinatura inválida).")); };
       document.head.appendChild(s);
     });
   }
